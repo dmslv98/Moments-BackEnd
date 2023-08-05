@@ -1,7 +1,17 @@
 import { DateTime } from 'luxon'
-import { BaseModel, column } from '@ioc:Adonis/Lucid/Orm'
+import { BaseModel, HasMany, column, hasMany } from '@ioc:Adonis/Lucid/Orm'
+import Comment from './Comment'
 
 export default class Moment extends BaseModel {
+  // eslint-disable-next-line prettier/prettier
+  // eslint-disable-next-line prettier/prettier
+  // eslint-disable-next-line prettier/prettier
+
+  @hasMany(() => Comment)
+  // eslint-disable-next-line prettier/prettier
+  
+  public comments: HasMany<typeof Comment> 
+
   @column({ isPrimary: true })
   public id: number
 
